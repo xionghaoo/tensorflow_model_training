@@ -19,7 +19,8 @@ import matplotlib.pyplot as plt
 #     extract=True)
 image_path = os.path.join(os.path.dirname('.'), 'flower_photos')
 
-data = DataLoader.from_folder(image_path)
+# data = DataLoader.from_folder(image_path)
+data = DataLoader.from_tfds("dsprites")
 train_data, test_data = data.split(0.9)
 
 model = image_classifier.create(train_data)
